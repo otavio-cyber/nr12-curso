@@ -1,0 +1,144 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Brand Colors */
+  --c-ink: oklch(0.12 0.02 260);
+  --c-ink-80: oklch(0.18 0.025 260);
+  --c-ink-60: oklch(0.32 0.02 260);
+  --c-steel: oklch(0.55 0.02 260);
+  --c-steel-light: oklch(0.82 0.01 260);
+  --c-steel-xlight: oklch(0.94 0.005 260);
+  --c-amber: oklch(0.72 0.16 70);
+  --c-amber-dark: oklch(0.58 0.14 70);
+  --c-amber-light: oklch(0.90 0.06 70);
+  --c-amber-xlight: oklch(0.96 0.025 70);
+  --c-white: oklch(1 0 0);
+  --c-surface: oklch(0.975 0.003 260);
+  --c-surface-2: oklch(0.935 0.008 260);
+  --c-surface-warm: oklch(0.975 0.015 70);
+
+  /* Semantic Tokens */
+  --background: var(--c-white);
+  --foreground: var(--c-ink);
+  --card: var(--c-white);
+  --card-foreground: var(--c-ink);
+  --popover: var(--c-white);
+  --popover-foreground: var(--c-ink);
+  --primary: var(--c-amber);
+  --primary-foreground: var(--c-white);
+  --secondary: var(--c-surface);
+  --secondary-foreground: var(--c-ink);
+  --muted: var(--c-surface);
+  --muted-foreground: var(--c-steel);
+  --accent: var(--c-amber-xlight);
+  --accent-foreground: var(--c-amber-dark);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: var(--c-steel-light);
+  --input: var(--c-steel-light);
+  --ring: var(--c-amber);
+  --radius: 0.5rem;
+}
+
+@theme inline {
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display), Georgia, serif;
+  --font-condensed: var(--font-condensed), ui-sans-serif, system-ui, sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  
+  /* Custom colors */
+  --color-ink: var(--c-ink);
+  --color-ink-80: var(--c-ink-80);
+  --color-ink-60: var(--c-ink-60);
+  --color-steel: var(--c-steel);
+  --color-steel-light: var(--c-steel-light);
+  --color-steel-xlight: var(--c-steel-xlight);
+  --color-amber: var(--c-amber);
+  --color-amber-dark: var(--c-amber-dark);
+  --color-amber-light: var(--c-amber-light);
+  --color-amber-xlight: var(--c-amber-xlight);
+  --color-surface: var(--c-surface);
+  --color-surface-2: var(--c-surface-2);
+  --color-surface-warm: var(--c-surface-warm);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Fade-in animation for scroll reveal */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.7s ease-out forwards;
+}
+
+/* Staggered delays */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--c-surface);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--c-steel-light);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--c-steel);
+}
+
+/* Selection */
+::selection {
+  background: var(--c-amber);
+  color: white;
+}
