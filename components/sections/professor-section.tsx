@@ -26,9 +26,9 @@ export function ProfessorSection() {
   ]
 
   return (
-    <section 
+    <section
       ref={ref}
-      id="professor" 
+      id="professor"
       className="relative bg-ink py-24 md:py-32 lg:py-40 overflow-hidden"
     >
       {/* Background accents */}
@@ -49,10 +49,10 @@ export function ProfessorSection() {
           <div className={`relative transition-all duration-700 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
             {/* Decorative frame */}
             <div className="absolute -inset-3 bg-gradient-to-br from-amber/10 to-transparent rounded-2xl" />
-            
+
             <div className="relative aspect-video rounded-xl overflow-hidden bg-black shadow-2xl shadow-black/40">
               <iframe
-                src="https://www.youtube.com/embed/6pPJdLlqCq4?rel=0&modestbranding=1"
+                src="https://www.youtube.com/embed/4_U8gVSmOrc?rel=0&modestbranding=1"
                 title="Apresentação do curso NR12 — Prof. Luiz Carlos Natale Macedo"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
@@ -60,7 +60,7 @@ export function ProfessorSection() {
                 className="absolute inset-0 w-full h-full"
               />
             </div>
-            
+
             {/* Caption */}
             <p className="mt-5 text-white/40 text-sm italic text-center">
               Prof. Luiz Carlos Natale Macedo apresenta o programa
@@ -95,9 +95,8 @@ export function ProfessorSection() {
               {credentials.map((cred, index) => (
                 <span
                   key={index}
-                  className={`font-[family-name:var(--font-condensed)] text-xs font-semibold tracking-wide uppercase bg-amber/10 text-amber border border-amber/20 px-4 py-2 rounded-full transition-all duration-500 hover:bg-amber/20 ${
-                    isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
-                  }`}
+                  className={`font-[family-name:var(--font-condensed)] text-xs font-semibold tracking-wide uppercase bg-amber/10 text-amber border border-amber/20 px-4 py-2 rounded-full transition-all duration-500 hover:bg-amber/20 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
+                    }`}
                   style={{ transitionDelay: `${400 + index * 80}ms` }}
                 >
                   {cred}
