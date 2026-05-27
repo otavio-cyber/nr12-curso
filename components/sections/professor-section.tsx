@@ -52,9 +52,9 @@ export function ProfessorSection() {
 
             <div className="relative aspect-video rounded-xl overflow-hidden bg-black shadow-2xl shadow-black/40">
               <iframe
-                src="https://www.youtube-nocookie.com/embed/4_U8gVSmOrc?rel=0&modestbranding=1"
+                src="https://player.vimeo.com/video/1195807284?badge=0&autopause=0&player_id=0&app_id=58479"
                 title="Apresentação do curso NR12 — Prof. Luiz Carlos Natale Macedo"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="strict-origin-when-cross-origin"
